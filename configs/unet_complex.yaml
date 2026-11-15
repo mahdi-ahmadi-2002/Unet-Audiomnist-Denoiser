@@ -1,0 +1,19 @@
+# Main model: attention U-Net predicting a complex ratio mask (magnitude + phase).
+data:
+  root: data/AudioMNIST/data
+  noise_source: synthetic      # white / pink / brown / hum / babble mixed on the fly
+  snr_min: -5
+  snr_max: 20
+model:
+  mask: complex
+  base_channels: 32
+  depth: 4
+  attention: true
+loss:
+  mrstft: 1.0
+  snr: 0.05
+train:
+  out_dir: runs/unet_complex
+  epochs: 30
+  batch_size: 16               # fits a 4 GB GPU with mixed precision
+  lr: 3.0e-4

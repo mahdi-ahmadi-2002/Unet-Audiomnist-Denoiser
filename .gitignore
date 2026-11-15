@@ -1,3 +1,17 @@
 *.csv
 *.xlsx
 .idea
+.vscode
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# datasets, training runs and checkpoints are not versioned
+data/
+runs/
+*.pt
+*.pth

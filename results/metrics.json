@@ -1,0 +1,191 @@
+{
+  "test_utterances": 3000,
+  "test_speakers": [
+    "09",
+    "17",
+    "21",
+    "28",
+    "35",
+    "43"
+  ],
+  "noise_source": "synthetic",
+  "sample_rate": 16000,
+  "checkpoints": {
+    "unet_complex": "runs/unet_complex/best.pt",
+    "unet_magnitude": "runs/unet_magnitude/best.pt"
+  },
+  "overall": {
+    "noisy": {
+      "si_sdr": 5.995031835734999,
+      "si_sdr_i": 0.0,
+      "snr": 5.709680939299986,
+      "stoi": 0.882859153347228,
+      "pesq": null
+    },
+    "spectral_subtraction": {
+      "si_sdr": 10.924419530590995,
+      "si_sdr_i": 4.929387697536498,
+      "snr": 11.041090706077094,
+      "stoi": 0.89358493254371,
+      "pesq": null,
+      "rtf_cpu": 0.0032761000329628587,
+      "parameters": 0
+    },
+    "wiener": {
+      "si_sdr": 11.32995200342747,
+      "si_sdr_i": 5.334920167534301,
+      "snr": 11.564361997994284,
+      "stoi": 0.8864405746779305,
+      "pesq": null,
+      "rtf_cpu": 0.013077000039629638,
+      "parameters": 0
+    },
+    "unet_complex": {
+      "si_sdr": 16.911058017239597,
+      "si_sdr_i": 10.916026172329982,
+      "snr": 17.194998954577063,
+      "stoi": 0.946573326723787,
+      "pesq": null,
+      "rtf_cpu": 0.10214620002079755,
+      "parameters": 9069174
+    },
+    "unet_magnitude": {
+      "si_sdr": 16.352906503224123,
+      "si_sdr_i": 10.357874657750129,
+      "snr": 16.61513955019166,
+      "stoi": 0.946525830052665,
+      "pesq": null,
+      "rtf_cpu": 0.09687010000925511,
+      "parameters": 9068821
+    }
+  },
+  "si_sdr_i_by_noise_type": {
+    "babble": {
+      "spectral_subtraction": 0.02002844496892318,
+      "wiener": -0.01890251030807668,
+      "unet_complex": 3.8533250285450866,
+      "unet_magnitude": 3.941299967815221
+    },
+    "pink": {
+      "spectral_subtraction": 4.474200299449723,
+      "wiener": 5.34684960085983,
+      "unet_complex": 9.698533538861568,
+      "unet_magnitude": 9.472364257454487
+    },
+    "brown": {
+      "spectral_subtraction": 3.9269188133608393,
+      "wiener": 6.892796270586864,
+      "unet_complex": 15.862790382609647,
+      "unet_magnitude": 14.990155521360766
+    },
+    "hum": {
+      "spectral_subtraction": 8.740193519816303,
+      "wiener": 6.216934094893053,
+      "unet_complex": 13.753318269780818,
+      "unet_magnitude": 11.969619366946636
+    },
+    "white": {
+      "spectral_subtraction": 7.297122232275071,
+      "wiener": 8.014453433307947,
+      "unet_complex": 11.25485560784932,
+      "unet_magnitude": 11.24943546220368
+    }
+  },
+  "si_sdr_i_by_input_snr": {
+    "-5 to 0": {
+      "spectral_subtraction": 6.086466803770712,
+      "wiener": 7.689538444160287,
+      "unet_complex": 14.356312103263964,
+      "unet_magnitude": 13.71952934708881
+    },
+    "0 to 5": {
+      "spectral_subtraction": 5.408784044310316,
+      "wiener": 6.435359712690115,
+      "unet_complex": 12.755309980396337,
+      "unet_magnitude": 12.151074625268768
+    },
+    "5 to 10": {
+      "spectral_subtraction": 5.00616046956894,
+      "wiener": 5.4137710348925605,
+      "unet_complex": 10.76691883983034,
+      "unet_magnitude": 10.272417743599375
+    },
+    "10 to 15": {
+      "spectral_subtraction": 4.539985528844872,
+      "wiener": 4.393224072772146,
+      "unet_complex": 9.3858928175162,
+      "unet_magnitude": 8.771445162248927
+    },
+    "15 to 20": {
+      "spectral_subtraction": 3.613780462063425,
+      "wiener": 2.7667510133448654,
+      "unet_complex": 7.362375888979532,
+      "unet_magnitude": 6.920535092237519
+    }
+  },
+  "primary_system": "unet_complex",
+  "demographics": {
+    "gender": {
+      "female": {
+        "speakers": 2,
+        "utterances": 1000,
+        "si_sdr_i_mean": 12.242052890121936,
+        "si_sdr_i_std": 5.820820798478363
+      },
+      "male": {
+        "speakers": 4,
+        "utterances": 2000,
+        "si_sdr_i_mean": 10.253012813434005,
+        "si_sdr_i_std": 5.412044820360491
+      }
+    },
+    "native speaker": {
+      "no": {
+        "speakers": 6,
+        "utterances": 3000,
+        "si_sdr_i_mean": 10.916026172329982,
+        "si_sdr_i_std": 5.630273330476568
+      }
+    },
+    "accent": {
+      "chinese": {
+        "speakers": 1,
+        "utterances": 500,
+        "si_sdr_i_mean": 10.736725139796734,
+        "si_sdr_i_std": 5.8878944033397405
+      },
+      "german": {
+        "speakers": 4,
+        "utterances": 2000,
+        "si_sdr_i_mean": 10.929197038680314,
+        "si_sdr_i_std": 5.638279538366039
+      },
+      "south korean": {
+        "speakers": 1,
+        "utterances": 500,
+        "si_sdr_i_mean": 11.042643739461898,
+        "si_sdr_i_std": 5.321926980323064
+      }
+    },
+    "age": {
+      "25-34": {
+        "speakers": 4,
+        "utterances": 2000,
+        "si_sdr_i_mean": 10.929197038680314,
+        "si_sdr_i_std": 5.638279538366039
+      },
+      "35 and over": {
+        "speakers": 1,
+        "utterances": 500,
+        "si_sdr_i_mean": 11.042643739461898,
+        "si_sdr_i_std": 5.321926980323064
+      },
+      "under 25": {
+        "speakers": 1,
+        "utterances": 500,
+        "si_sdr_i_mean": 10.736725139796734,
+        "si_sdr_i_std": 5.8878944033397405
+      }
+    }
+  }
+}

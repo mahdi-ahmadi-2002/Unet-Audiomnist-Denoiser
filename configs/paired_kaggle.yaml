@@ -1,0 +1,7 @@
+# Train on the pre-mixed Kaggle "Noisy AudioMNIST" pairs (<name>.wav + <name>_noisy.wav)
+# used by the original notebook, instead of on-the-fly synthetic noise.
+data:
+  root: data/noisy-audio-mnist
+  noise_source: paired
+train:
+  out_dir: runs/unet_complex_paired

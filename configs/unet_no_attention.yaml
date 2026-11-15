@@ -1,0 +1,6 @@
+# Ablation: complex mask without attention gates on the skip connections.
+model:
+  mask: complex
+  attention: false
+train:
+  out_dir: runs/unet_no_attention

@@ -1,0 +1,5 @@
+# Ablation: real-valued magnitude mask, noisy phase reused.
+model:
+  mask: magnitude
+train:
+  out_dir: runs/unet_magnitude

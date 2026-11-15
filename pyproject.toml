@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "audiomnist-denoiser"
+version = "2.0.0"
+description = "Speech denoising on AudioMNIST with mask-based attention U-Nets and classical DSP baselines"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "soundfile>=0.12",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "matplotlib>=3.7",
+    "pystoi>=0.4",
+]
+
+[project.optional-dependencies]
+demo = ["gradio>=4.0"]
+pesq = ["pesq>=0.0.4"]
+dev = ["pytest>=7.0", "ruff>=0.4"]
+
+[tool.setuptools]
+packages = ["denoiser"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
